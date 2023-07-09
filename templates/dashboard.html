@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="..\static\dashboard.css">
+    <script src="..\static\jquery-3.6.4.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="../static/canvasjs-3.7.5/canvasjs.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation" id="sidebar">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span id="logo-menuitem" class="icon titlehide">
+                            <img src="..\static\img\icons8-protect-96 (1).png">
+                        </span>
+
+                        <span id="title-menuitem" class="title">Phishing and Intrusion Detection </span>
+                    </a>
+                </li>
+
+                <li class="hovered" id="admin-dashboard">
+                    <a href="#" onclick="showContent('dashboard')">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="hovered" id="user-dashboard">
+                    <a href="#" onclick="showContent('dashboard')">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li id="profile-menuitem">
+                    <a href="#" onclick="showContent('profile')">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+
+                <li id="user-menuitem">
+                    <a href="#" onclick="showContent('user')">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+
+                        </span>
+                        <span class="title">User</span>
+                    </a>
+                </li>
+
+                <li id="message-menuitem">
+                    <a href="#" onclick="showContent('messages')">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+
+
+                <li id="password-menuitem">
+                    <a href="#" onclick="showContent('password')">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="showContent('signout')">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main" id="main">
+            <div id="dashboard">
+                <div class="topbar">
+                    <div class="toggle">
+                        <ion-icon class="toggletransition" id="icon1" name="close-outline"></ion-icon>
+                        <ion-icon class="toggletransition" id="icon2" name="menu-outline"
+                            style="display: none;"></ion-icon>
+                    </div>
+
+                    <div class="search">
+                        <label>
+                            <input type="text" placeholder="Search here">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="cardBox">
+                    <div class="card">
+                        <div>
+                            <div class="numbers">4</div>
+                            <div class="cardName">Protected Users</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="numbers">2</div>
+                            <div class="cardName">Phishing Detected</div>
+                            
+                        </div>
+
+
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="numbers">6</div>
+                            <div class="cardName">Intrusion Detected</div>
+                            
+                        </div>
+
+
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="numbers">2</div>
+                            <div class="cardName">Email Detection</div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="details">
+                    <div class="detection">
+                        <div class="cardHeader">
+                            <h2>Detection</h2>
+                            <a href="#" class="btn">View All</a>
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>User_ID</td>
+                                    <td>Email</td>
+                                    <td>Status</td>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Alan</td>
+                                    <td>User_001</td>
+                                    <td>alanram221@gmail.com</td>
+                                    <td><span class="status delivered">Detected</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Maria</td>
+                                    <td>User_004</td>
+                                    <td>Maria738@gmail.com</td>
+                                    <td><span class="status pending">Not Detected</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Rachel</td>
+                                    <td>User_006</td>
+                                    <td>rachelgreen@gmail.com</td>
+                                    <td><span class="status return">Not Detected</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Tayana</td>
+                                    <td>User_008</td>
+                                    <td>tayanasingh@gmail.com</td>
+                                    <td><span class="status inProgress">Not Detected</span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="detectionChart">
+                        <div class="cardHeadernew" ></div>
+                            <h2>Detection Chart</h2>
+                            <div id="chartContainer">    
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="details" id="messages">
+                <div class="detection">
+                    <div class="cardHeader">
+                        <h2>Message</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="details" id="password">
+                <div class="detection">
+                    <div class="cardHeader">
+                        <h2>Change Password</h2>
+                    </div>
+                    <div class="centered">
+                        <form method="post">
+                            <div>
+                                <label form="cppOldPassword">Old password</label>
+                                <input id="cppOldPassword" type="password" name="cppOldPassword" required>
+                            </div>
+                            <div>
+                                <label form="cppNewPassword">New password</label>
+                                <input id="cppNewPassword" type="password" name="cppNewPassword" required>
+                            </div>
+                            <div>
+                                <label form="cppConfirmPassword">Confirm new password</label>
+                                <input id="cppConfirmPassword" type="password" name="cppConfirmPassword" required>
+                            </div>
+                            <button type="submit">Change password</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="details" id="profile">
+                <div class="detection">
+                    <div class="cardHeader">
+                        <h2>Profile</h2>
+                    </div>
+                    <div class="profiledetails">
+                        <div class="profilerow">
+                            <label form="name">Full Name</label>
+                            <input type="text" id="name" name="text">
+                        </div>
+                        <div class="profilerow">
+                            <label form="age">Date of Birth</label>
+                            <input type="text" id="age" name="age" name="text">
+                        </div>
+                        <div class="profilerow">
+                            <label form="country">Email</label>
+                            <input type="text" id="country" name="text">
+                        </div>
+                        <div class="profilerow">
+                            <label form="country">Old Password</label>
+                            <input type="password" id="country" name="text">
+                        </div>
+                        <div class="profilerow">
+                            <label form="country">New Password</label>
+                            <input type="password" id="country" name="text">
+                        </div>
+                        <div class="profilerow flex-center">
+                            <button type="save">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="details" id="signout">
+                <div class="detection">
+                    <div class="cardHeader">
+                        <h2>Sign Out</h2>
+                    </div>
+                    <div>
+                    <p>Are you sure</p>
+                    <button type="submit" >Sign Out</button> 
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <script src="..\static\dashboard.js"></script>
+
+</body>
+
+</html>

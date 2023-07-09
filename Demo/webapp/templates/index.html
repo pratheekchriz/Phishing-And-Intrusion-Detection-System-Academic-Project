@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../static/scripts/style2.css" rel="stylesheet" />
+  <title>Phishing Detection</title>
+  <script>
+    function validateURL() {
+      var input = document.getElementById("urlInput").value;
+      var urlPattern = /^(?:(?:https?|ftp):\/\/)?(?:[\w-]+\.)+[a-z]{2,6}(?:\/[\w-.\/?%&=]*)?$/i;
+      var validationMessage = document.getElementById("validationMessage");
+
+      if (!urlPattern.test(input)) {
+        validationMessage.innerText = "Please enter a valid URL!";
+        return false;
+      }
+      validationMessage.innerText = "Scanning the URL";
+      return true;
+    }
+  </script>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="brand">
+      <img src="..\static\images\images.png" alt="Phishinator Logo" class="logo-img" />
+      <a href="#" class="brand-name">PHISHING DETECTOR</a>
+    </div>
+    <div>
+      <ul>
+        <li><a href="http://127.0.0.1:8000/dashboard/">Home</a></li>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>A Phishing URL detection tool</h1>
+    <p class="section2">
+      Strengthen your online safety. 
+      Validate URLs instantly, protect against threats, and secure your personal information effortlessly.
+    </p>
+    <div class="img">
+      <img src="../static/images/phishing.jpg"/>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="input">
+      <form method="POST" action="/" onsubmit="return validateURL()">
+        <input class="form-control" type="text" placeholder="Enter website address or URL" name="url" id = "urlInput" />
+        <div class="form-group">
+          <button type="submit">SCAN</button>
+        </div>
+        <br>
+        <br>
+        <span id="validationMessage" class="error-message"></span>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

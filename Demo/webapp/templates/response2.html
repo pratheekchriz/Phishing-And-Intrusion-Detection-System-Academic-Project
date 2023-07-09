@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../static/scripts/response.css" rel="stylesheet" />
+  <title>Phishing Result</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="brand">
+      <img src="..\static\images\images.png" alt="Phishinator Logo" class="logo-img" />
+      <a href="#" class="brand-name">PHISHING DETECTOR</a>
+    </div>
+    <div>
+      <ul>
+        <li><a href="../templates/index.html">Back</a></li>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>{{result_message}}.</h1>
+    <hr>
+    <p class="section2">
+    <h3>{{desc_message}}</h3>
+    </p>
+    <div class="container-img">
+      <img src="{{gif_link}}" alt="gif" />
+    </div>
+  </div>
+  <hr>
+  <div class="container-fluid">
+    <div class="side-container left-container">
+      <center>
+        <h2>Status</h2>
+      </center>
+      <hr>
+      <center>
+        <p class="sample-paragraph"><h3>{{general_analysis_report}}</h3></p>
+      </center>
+    </div>
+    <div class="side-container right-container">
+      <center>
+        <h2>Detector Results</h2>
+      </center>
+      <hr>
+      <center>
+        <p class="sample-paragraph"><h3>Phishing Probability - {{phish_prob}}</h3></p>
+        <p class="sample-paragraph"><h3>Legal Probability - {{legal_prob}}</h3></p>
+      </center>
+    </div>
+  </div>
+</body>
+
+</html>
